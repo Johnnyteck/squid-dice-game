@@ -12,11 +12,15 @@ const message = document.getElementById("message")
 const rollBtn1 = document.getElementById("rollBtn1")
 const rollBtn2 = document.getElementById("rollBtn2")
 const resetBtn = document.getElementById("resetBtn")
+const comment = document.getElementById("text")
 
 function showResetButton() {
-    // rollBtn.style.display = "none"
+    rollBtn1.style.display = "none"
+    rollBtn2.style.display = "none"
     resetBtn.style.display = "block"
 }
+
+
 
 /* Hook up a click event listener to the Roll Dice Button. */
 rollBtn1.addEventListener("click", function() {
@@ -32,12 +36,12 @@ rollBtn1.addEventListener("click", function() {
         if (player1Score >= 20) {
             message.textContent = "Player 1 Won 🥳"
             showResetButton()
-
         } else if (player2Score >= 20) {
             message.textContent = "Player 2 Won 🎉"
             showResetButton()
-        }
+        } else { }
     } else{}
+    
     
 })
  
@@ -57,9 +61,7 @@ rollBtn2.addEventListener("click", function() {
         } else if (player2Score >= 20) {
             message.textContent = "Player 2 Won 🎉"
             showResetButton()
-        } else {
-
-        }
+        } else {}
     } else{}
 
     
@@ -70,6 +72,15 @@ resetBtn.addEventListener("click", function(){
     reset()
 })
 
+// if (player1Score === 0) {
+//     comment.textContent = ``
+// } else if (player1Score === 6 || player2Score === 6 ) {
+//     comment.textContent = "You just have just drawn a perfect number 6. Nice 🤗"
+// } else if (player1Score === 2 || player2Score === 2) {
+//     comment.textContent = `You just have just drawn a the only even square number. Weldone 🤗`
+// }
+// else {}
+
 function reset() {
     player1Score = 0
     player2Score = 0
@@ -79,6 +90,8 @@ function reset() {
     player1Dice.textContent = "-"
     player2Dice.textContent = "-"
     message.textContent = "Player 1 Turn"
+    rollBtn1.style.display = "block"
+    rollBtn2.style.display = "block"
     resetBtn.style.display = "none"
     player2Dice.classList.remove("active")
     player1Dice.classList.add("active")
