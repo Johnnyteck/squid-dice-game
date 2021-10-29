@@ -71,12 +71,12 @@ resetBtn.addEventListener("click", function(){
 function reset() {
     player1Score = 0
     player2Score = 0
-    player1Turn = !player1turn
+    player1Turn = true
     player1Scoreboard.textContent = 0
     player2Scoreboard.textContent = 0
     player1Dice.textContent = "-"
     player2Dice.textContent = "-"
-    // message.textContent = "Player 1 Turn"
+    message.textContent = "Player 1 Turn"
     resetBtn.style.display = "none"
     player2Dice.classList.remove("active")
     player1Dice.classList.add("active")
