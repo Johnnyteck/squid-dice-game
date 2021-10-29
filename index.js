@@ -29,15 +29,16 @@ rollBtn1.addEventListener("click", function() {
         player2Dice.classList.add("active")
         message.textContent = "Player 2 Turn"
         player1Turn = !player1Turn
+        if (player1Score >= 20) {
+            message.textContent = "Player 1 Won 🥳"
+            showResetButton()
+
+        } else if (player2Score >= 20) {
+            message.textContent = "Player 2 Won 🎉"
+            showResetButton()
+        }
     } else{}
     
-    if (player1Score >= 20) {
-        message.textContent = "Player 1 Won 🥳"
-        showResetButton()
-    } else if (player2Score >= 20) {
-        message.textContent = "Player 2 Won 🎉"
-        showResetButton()
-    } else{}
 })
  
 
@@ -50,17 +51,18 @@ rollBtn2.addEventListener("click", function() {
         player2Dice.classList.remove("active")
         player1Dice.classList.add("active")
         message.textContent = "Player 1 Turn"
+        if (player1Score >= 20) {
+            message.textContent = "Player 1 Won 🥳"
+            showResetButton()
+        } else if (player2Score >= 20) {
+            message.textContent = "Player 2 Won 🎉"
+            showResetButton()
+        } else {
+
+        }
     } else{}
 
-    if (player1Score >= 20) {
-        message.textContent = "Player 1 Won 🥳"
-        showResetButton()
-    } else if (player2Score >= 20) {
-        message.textContent = "Player 2 Won 🎉"
-        showResetButton()
-    } else {
-
-    }
+    
     player1Turn = true
 })
 
